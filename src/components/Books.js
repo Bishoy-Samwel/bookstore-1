@@ -6,9 +6,9 @@ export default function Books() {
   const books = useSelector(state => state.books, shallowEqual);
   return (
     <ul>
-      {books.map(
-        book => <Book key={book.id} book={book} />,
-      )}
+      {
+        Array.isArray(books) ? books.map(book => <Book key={book.id} book={book} />) : 'No Books yet'
+      }
     </ul>
   );
 }
