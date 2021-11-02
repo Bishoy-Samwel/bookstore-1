@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
-export default function User(props) {
+export default function Book(props) {
+  const dispatch = useDispatch();
   const { book } = props;
   return (
     <li key={book.id}>
@@ -9,12 +12,12 @@ export default function User(props) {
       {book.name}
       {book.author}
       <button type="button">Comments</button>
-      <button type="button">Remove</button>
+      <button type="button" onClick={() => dispatch(removeBook(book.id))}>Remove</button>
       <button type="button">Edit</button>
     </li>
   );
 }
 
-User.propTypes = {
+Book.propTypes = {
   book: PropTypes.shape.isRequired,
 };
