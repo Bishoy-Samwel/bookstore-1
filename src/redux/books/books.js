@@ -1,4 +1,3 @@
-
 // Actions
 const actionName = 'project-name/folder/name';
 
