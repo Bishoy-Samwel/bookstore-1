@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
 
-export default function Book(props) {
+const Book = props => {
   const dispatch = useDispatch();
   const { book } = props;
   return (
@@ -16,8 +16,10 @@ export default function Book(props) {
       <button type="button">Edit</button>
     </li>
   );
-}
+};
 
 Book.propTypes = {
   book: PropTypes.shape.isRequired,
 };
+
+export default Book;

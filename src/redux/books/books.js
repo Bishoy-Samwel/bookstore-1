@@ -28,5 +28,5 @@ export const removeBook = payload => ({
 
 // side effects, only as applicable
 // e.g. thunks, epics, etc
-export function effect() {
-}
+export const effect = () => {
+};
