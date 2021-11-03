@@ -1,19 +1,32 @@
-// Actions
-const actionName = 'project-name/folder/name';
+// Actions Types
+const ADD_BOOK = 'bookStore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 
 // Reducer
-export default function reducer(state = {}, action = {}) {
+const initialState = [];
+const reducer = (state = initialState, action) => {
   switch (action.type) {
-    // do reducer stuff
-    default: return state;
+    case ADD_BOOK:
+      return [...state, action.payload];
+    case REMOVE_BOOK:
+      return state.filter(book => book.id !== action.payload);
+    default:
+      return state;
   }
-}
+};
+export default reducer;
+
 // Action Creators
-export function loadWidgets() {
-  return { type: actionName };
-}
+export const addBook = payload => ({
+  type: ADD_BOOK,
+  payload,
+});
+export const removeBook = payload => ({
+  type: REMOVE_BOOK,
+  payload,
+});
 
 // side effects, only as applicable
 // e.g. thunks, epics, etc
-export function effect() {
-}
+export const effect = () => {
+};
