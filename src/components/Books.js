@@ -1,16 +1,26 @@
-import React from 'react';
-import { useSelector, shallowEqual } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, shallowEqual, useDispatch } from 'react-redux';
+import { loadBooks } from '../redux/books/books';
 import Book from './Book';
 
 const Books = () => {
   const books = useSelector(state => state.books, shallowEqual);
-  return (
-    <ul>
-      {
-        Array.isArray(books) ? books.map(book => <Book key={book.id} book={book} />) : 'No Books yet'
-      }
-    </ul>
+  const isLoading = useSelector(state => state.isLoading, shallowEqual);
+  const dispatch = useDispatch();
+  useEffect(
+    () => { dispatch(loadBooks()); }, [],
   );
+  const loadingMessage = <div> Loading books...</div>;
+  const content = books => (books.map(book => <Book key={book.id} book={book} />));
+
+  if (!isLoading) {
+    return (
+      <ul>
+        {content(books)}
+      </ul>
+    );
+  }
+  return loadingMessage;
 };
 
 export default Books;
