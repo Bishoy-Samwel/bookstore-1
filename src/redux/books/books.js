@@ -31,6 +31,8 @@ export const isLoading = (state = false, action) => {
   switch (type) {
     case LOAD_BOOKS_IN_PROGRESS:
       return true;
+    case LOAD_BOOKS_SUCCESS:
+      return false;
     case LOAD_BOOKS_FAILURE:
       return false;
     default:
