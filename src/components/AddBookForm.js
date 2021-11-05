@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { addBookRequest } from '../redux/books/books';
 
 const emptyFields = () => {
   const fields = document.querySelectorAll('.add-form');
@@ -12,10 +12,11 @@ const emptyFields = () => {
 };
 
 const AddBookForm = () => {
+  // eslint-disable-next-line no-unused-vars
   const dispatch = useDispatch();
   const [book, setBook] = useState({
     title: '',
-    author: '',
+    category: '',
   });
   const onChange = e => {
     setBook({
@@ -26,12 +27,12 @@ const AddBookForm = () => {
   const submitBookToStore = book => {
     const newBook = {
       ...book,
-      id: uuidv4(), // make sure it's unique
+      item_id: uuidv4(), // make sure it's unique
     };
-    dispatch(addBook(newBook));
+    dispatch(addBookRequest(newBook));
   };
   const handleAddBook = () => {
-    if (book.title && book.author) {
+    if (book.title && book.category) {
       submitBookToStore(book);
       emptyFields();
     } else {
@@ -41,7 +42,7 @@ const AddBookForm = () => {
   return (
     <form>
       <input className="add-form" onChange={onChange} type="text" name="title" placeholder="Title" />
-      <input className="add-form" onChange={onChange} type="text" name="author" placeholder="Author" />
+      <input className="add-form" onChange={onChange} type="text" name="category" placeholder="Author" />
       <input type="button" value="Add" onClick={handleAddBook} />
     </form>
   );
