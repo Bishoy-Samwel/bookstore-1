@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import axios from 'axios';
 
 // Actions Types
@@ -41,11 +42,11 @@ export const isLoading = (state = false, action) => {
 };
 
 // Action Creators
-export const addBook = payload => ({
+const addBook = payload => ({
   type: ADD_BOOK,
   payload,
 });
-export const removeBook = payload => ({
+const removeBook = payload => ({
   type: REMOVE_BOOK,
   payload,
 });
@@ -109,6 +110,17 @@ export const addBookRequest = book => (
         body,
       });
       dispatch(addBook(book));
+    } catch (error) {
+      dispatch(displayAlert(error));
+    }
+  }
+);
+
+export const removeBookRequest = item_id => (
+  async dispatch => {
+    try {
+      axios.delete(`${baseUrl}${appId}/books/${item_id}`, { item_id });
+      dispatch(removeBook(item_id));
     } catch (error) {
       dispatch(displayAlert(error));
     }
