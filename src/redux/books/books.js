@@ -77,8 +77,8 @@ const extractBooks = obj => {
   Object.entries(obj).forEach(dataItem => {
     const obj = {
       item_id: dataItem[0],
-      title: dataItem[1].title,
-      category: dataItem[1].category,
+      title: dataItem[1][0].title,
+      category: dataItem[1][0].category,
     };
     result.push(obj);
   });
