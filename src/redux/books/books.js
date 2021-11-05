@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 // Actions Types
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
@@ -58,7 +60,37 @@ export const loadBooksSuccess = books => ({
 export const loadBooksFailure = () => ({
   type: LOAD_BOOKS_FAILURE,
 });
+
 // side effects, only as applicable
 // e.g. thunks, epics, etc
-export const effect = () => {
+const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/';
+const appId = 'RBNrAr3PCfuwfDwCo1lD';
+
+export const displayAlert = text => () => {
+  alert(`${text}`);
+};
+
+const extractBooks = obj => {
+  const result = [];
+  Object.entries(obj).forEach(dataItem => {
+    const obj = {
+      item_id: dataItem[0],
+      title: dataItem[1].title,
+      category: dataItem[1].category,
+    };
+    result.push(obj);
+  });
+  return result;
+};
+
+export const loadBooks = () => async dispatch => {
+  try {
+    dispatch(loadBooksInProgress()); // The loading is in progress in this moment
+    const response = await axios.get(`${baseUrl}${appId}/books`);
+    const books = await extractBooks(response.data); // Convert the data to array of books
+    dispatch(loadBooksSuccess(books)); // The loading is succedded in this moment
+  } catch (e) {
+    dispatch(loadBooksFailure()); // The loading failed in this moment
+    dispatch(displayAlert(e)); // Show the error
+  }
 };
