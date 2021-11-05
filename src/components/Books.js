@@ -11,7 +11,7 @@ const Books = () => {
     () => { dispatch(loadBooks()); }, [],
   );
   const loadingMessage = <div> Loading books...</div>;
-  const content = books => (books.map(book => <Book key={book.id} book={book} />));
+  const content = books => (books.map(book => <Book key={book.item_id} book={book} />));
 
   if (!isLoading) {
     return (

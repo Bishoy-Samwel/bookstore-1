@@ -12,7 +12,7 @@ const Book = props => {
       {' '}
       {book.title}
       <button type="button">Comments</button>
-      <button type="button" onClick={() => dispatch(removeBook(book.id))}>Remove</button>
+      <button type="button" onClick={() => dispatch(removeBook(book.item_id))}>Remove</button>
       <button type="button">Edit</button>
     </li>
   );
