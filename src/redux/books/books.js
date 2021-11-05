@@ -15,7 +15,7 @@ export const booksReducer = (state = initialState, action) => {
     case ADD_BOOK:
       return [...state, payload];
     case REMOVE_BOOK:
-      return state.filter(book => book.id !== payload);
+      return state.filter(book => book.item_id !== payload);
     case LOAD_BOOKS_SUCCESS: {
       const { books } = payload;
       return books;
@@ -96,3 +96,21 @@ export const loadBooks = () => async dispatch => {
     dispatch(displayAlert(e)); // Show the error
   }
 };
+
+export const addBookRequest = book => (
+  async dispatch => {
+    try {
+      const body = JSON.stringify(book);
+      await fetch(`${baseUrl}${appId}/books`, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'post',
+        body,
+      });
+      dispatch(addBook(book));
+    } catch (error) {
+      dispatch(displayAlert(error));
+    }
+  }
+);
