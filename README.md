@@ -15,7 +15,7 @@
 "Bookstore CMS" is a content management React-Redux app that's meant to help a user add or remove books but most importantly keep tracking data in terms of progress made so far in reading a particular book.
 This project uses [Bookstore API](https://www.notion.so/Bookstore-API-51ea269061f849118c65c0a53e88a739) for storage of book details data.
 
-![screenshot](https://user-images.githubusercontent.com/29541335/140617747-d2ad2108-a084-4017-8ce0-f5c99501707c.png)
+![image](https://user-images.githubusercontent.com/29541335/140617974-f0afc3c1-7bb5-4e7b-a6bc-073f20bb0948.png)
 
 
 <!-- ## [Live Demo - GH pages]() -->
