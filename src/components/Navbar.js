@@ -1,6 +1,7 @@
 import React from 'react';
-
+import { Avatar } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = () => {
   const links = [
@@ -16,18 +17,22 @@ const Navbar = () => {
     },
   ];
   return (
-    <nav>
-      <ul>
+    <div id="header">
+      <div className="navbar">
+        <span id="logo">
+          Bookstore CMS
+        </span>
         {links.map(link => (
-          <li key={link.id}>
-            <NavLink to={link.path} exact>
+          <span key={link.id}>
+            <NavLink activeClassName="active-link" to={link.path} exact>
               {link.text}
               {' '}
             </NavLink>
-          </li>
+          </span>
         ))}
-      </ul>
-    </nav>
+      </div>
+      <Avatar className="avatar" id="avatar-icon" />
+    </div>
   );
 };
 export default Navbar;
