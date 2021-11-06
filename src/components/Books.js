@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import { loadBooks } from '../redux/books/books';
 import Book from './Book';
-import './Books.css';
 
 const Books = () => {
   const books = useSelector(state => state.books, shallowEqual);
