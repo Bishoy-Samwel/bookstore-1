@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import { loadBooks } from '../redux/books/books';
 import Book from './Book';
+import './Books.css';
 
 const Books = () => {
   const books = useSelector(state => state.books, shallowEqual);
@@ -15,9 +16,9 @@ const Books = () => {
 
   if (!isLoading) {
     return (
-      <ul>
+      <div className="books">
         {content(books)}
-      </ul>
+      </div>
     );
   }
   return loadingMessage;
