@@ -1,0 +1,42 @@
+#logo {
+  color: #0290ff;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-bottom: #e8e8e8 1px solid;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(156, 156, 156);
+  padding-left: 50%;
+}
+
+.active-link {
+  color: rgb(18, 18, 18);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 2% 5%;
+}
+
+.avatar {
+  background: none !important;
+  border: 1px solid #eee;
+  margin-right: 3%;
+  justify-self: flex-end;
+}
+
+.avatar > svg {
+  color: #379cf6;
+  background-color: white;
+  border-radius: 50%;
+}

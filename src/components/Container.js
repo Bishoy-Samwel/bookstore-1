@@ -4,28 +4,33 @@ import {
   Route,
 } from 'react-router-dom';
 
-import Navbar from './NavBar';
+import Navbar from './Navbar';
 import Categories from './Categories';
 import Books from './Books';
 import AddBookForm from './AddBookForm';
+import './Container.css';
 
 const Container = () => (
-  <>
+  <div className="panel-bg">
     <Navbar />
     <Switch>
       <Route exact path="/">
-        <Books />
-        <AddBookForm />
+        <div className="sub-container">
+          <Books />
+          <AddBookForm />
+        </div>
       </Route>
       <Route path="/books">
-        <Books />
-        <AddBookForm />
+        <div className="sub-container">
+          <Books />
+          <AddBookForm />
+        </div>
       </Route>
       <Route path="/categories">
         <Categories />
       </Route>
     </Switch>
-  </>
+  </div>
 );
 
 export default Container;

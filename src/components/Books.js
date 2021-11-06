@@ -15,9 +15,9 @@ const Books = () => {
 
   if (!isLoading) {
     return (
-      <ul>
+      <div className="books">
         {content(books)}
-      </ul>
+      </div>
     );
   }
   return loadingMessage;

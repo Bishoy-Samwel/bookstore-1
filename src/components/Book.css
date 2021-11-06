@@ -1,0 +1,95 @@
+.book {
+  border: 1px solid #e8e8e8;
+  background-color: rgb(255, 255, 255);
+  padding: 3% 15% 3% 3%;
+  margin: 3% 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-details {
+  flex: 1;
+}
+
+.title {
+  font-size: x-large;
+  font-weight: bolder;
+  color: #121212;
+}
+
+.category {
+  color: #121212;
+  font-weight: 700;
+  opacity: 0.4;
+}
+
+p {
+  margin: 0%;
+}
+
+.aName {
+  color: #4386bf;
+}
+
+.buttons {
+  padding: 1% 0;
+  min-width: 200px;
+  margin-top: 7%;
+}
+
+button {
+  padding: 0 3%;
+  border: none;
+  background: none;
+  color: #4386bf;
+}
+
+.button {
+  border-right: 1px solid rgb(202, 202, 202);
+}
+
+#progress-btn {
+  background-color: #0290ff;
+  margin-top: 7%;
+  color: #fff;
+  border-radius: 3px;
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+  border: none;
+}
+
+.buttons .button:nth-child(3n) {
+  border: none;
+}
+
+.details-p {
+  padding-bottom: 3%;
+}
+
+.details-p:first-child,
+.completed {
+  color: #121212;
+  opacity: 0.5;
+}
+
+.progress-perc {
+  font-size: xx-large;
+}
+
+.percentage {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  border-right: 1px solid lightgrey;
+}
+
+.percentage-details {
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.details {
+  margin-left: 6%;
+}
