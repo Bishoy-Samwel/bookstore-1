@@ -1,0 +1,11 @@
+.panel-bg {
+  background-color: rgb(250, 250, 250);
+  border: 1px solid rgb(250, 250, 250);
+  width: 80%;
+  height: 100%;
+  margin: 5% auto;
+}
+
+.sub-container {
+  padding: 3%;
+}
