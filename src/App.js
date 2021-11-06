@@ -4,7 +4,7 @@ import './App.css';
 import Container from './components/Container';
 
 const App = () => (
-  <div className="App">
+  <div>
     <Container />
   </div>
 );
