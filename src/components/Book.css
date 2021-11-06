@@ -7,6 +7,10 @@
   justify-content: space-between;
 }
 
+.book-details {
+  flex: 1;
+}
+
 .title {
   font-size: x-large;
   font-weight: bolder;
@@ -76,10 +80,16 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1;
+  border-right: 1px solid lightgrey;
 }
 
 .percentage-details {
   margin-left: 10%;
   display: flex;
   flex-direction: column;
+}
+
+.details {
+  margin-left: 6%;
 }
