@@ -1,25 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { removeBookRequest } from '../redux/books/books';
 
 const Book = props => {
   const dispatch = useDispatch();
   const { book } = props;
   return (
-    <li key={book.id}>
+    <li>
       {book.category}
-      {book.name}
-      {book.author}
+      {' '}
+      {book.title}
       <button type="button">Comments</button>
-      <button type="button" onClick={() => dispatch(removeBook(book.id))}>Remove</button>
+      <button type="button" onClick={() => dispatch(removeBookRequest(book.item_id))}>Remove</button>
       <button type="button">Edit</button>
     </li>
   );
 };
 
 Book.propTypes = {
-  book: PropTypes.shape.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  book: PropTypes.object.isRequired,
 };
 
 export default Book;
