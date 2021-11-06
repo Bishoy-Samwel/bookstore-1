@@ -19,7 +19,7 @@ This project uses [Bookstore API](https://www.notion.so/Bookstore-API-51ea269061
 
 
 <!-- ## [Live Demo - GH pages]() -->
-## [Live Demo - Netlify]()
+<!-- ## [Live Demo - Netlify]() -->
 <!-- ## [Live Demo - Heroku]() -->
 
 ## Built With
