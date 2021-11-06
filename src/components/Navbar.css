@@ -35,8 +35,6 @@ a {
   justify-self: flex-end;
 }
 
-#avatar-icon {}
-
 .avatar > svg {
   color: #379cf6;
   background-color: white;
